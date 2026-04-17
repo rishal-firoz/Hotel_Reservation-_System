@@ -1,0 +1,358 @@
+/* General Body Styles */
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: #f8f9fa;
+    color: #495057; /* Softer body text */
+    line-height: 1.6;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1d3540; /* Darker, richer text */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #fca311; /* Warm amber accent for hover */
+}
+
+/* Main Content */
+main {
+    padding: 2rem 5%;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 7rem 2rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    margin-top: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* Availability Filter */
+.availability-filter {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    margin-bottom: 3rem;
+}
+
+.availability-filter h3 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #1d3540;
+}
+
+#availability-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1.5rem;
+}
+
+#availability-form .form-group {
+    margin-bottom: 0;
+}
+
+/* Room Listings */
+.room-listing h2, .admin-dashboard h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1d3540;
+}
+
+.room-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.room-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+}
+
+.room-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.room-card h3 {
+    padding: 0.5rem 1.5rem 0;
+    font-size: 1.2rem;
+}
+
+.room-card p {
+    padding: 0 1.5rem;
+}
+
+.room-card .price {
+    font-weight: bold;
+    color: #1a535c; /* Deep teal for price */
+    padding: 0 1.5rem 1.5rem;
+}
+
+/* Styles for booked rooms on the main page */
+.room-card.booked {
+    opacity: 0.6;
+    pointer-events: none; /* Disables mouse events like hover */
+}
+
+/* Buttons */
+.btn, .btn-danger {
+    display: block;
+    width: calc(100% - 2rem);
+    margin: 1rem;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #1a535c; /* Primary button color to deep teal */
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+#availability-form .btn, #availability-form .btn-danger {
+    width: auto;
+    margin: 0;
+    padding: 0.75rem 1.5rem;
+}
+
+.btn:hover {
+    background-color: #123a40; /* Darker teal for hover */
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+.btn-success {
+    background-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+/* Admin Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+}
+
+tr.checked-out-row {
+    opacity: 0.6;
+    background-color: #f2f2f2;
+    text-decoration: line-through;
+}
+
+/* Admin Table Action Buttons */
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.action-buttons .btn, .action-buttons .btn-danger {
+    display: inline-block;
+    width: auto;
+    padding: 0.4rem 0.8rem;
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    background-color: #e9ecef;
+    color: #555;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: slide-down 0.4s ease-out;
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box; /* Important for padding and width */
+}
+
+.error-message {
+    color: #e74c3c;
+    margin-bottom: 1rem;
+}
+
+/* Bill Modal Specific Styles */
+#bill-details {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+#bill-details .bill-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+#bill-details .bill-row:last-child {
+    border-bottom: none;
+}
+
+#bill-details .bill-row span:first-child {
+    font-weight: 500;
+    color: #555;
+}
+
+#bill-details .bill-total {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1d3540;
+}
+
+.room-card.booked .btn {
+    background-color: #6c757d; /* A neutral gray color */
+    cursor: not-allowed;
+}

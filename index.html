@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Grand Hotel - Welcome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Grand Hotel</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#rooms">Available Rooms</a></li>
+                <li><a href="#amenities">Amenities</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="admin.html">Admin Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Experience Luxury and Comfort</h1>
+            <p>Book your stay at the finest hotel in the city.</p>
+        </section>
+
+        <section id="availability-filter" class="availability-filter">
+            <h3>Check Availability for Your Stay</h3>
+            <form id="availability-form">
+                <div class="form-group">
+                    <label for="filter-check-in">Check-in Date:</label>
+                    <input type="date" id="filter-check-in" name="filterCheckIn" required>
+                </div>
+                <div class="form-group">
+                    <label for="filter-check-out">Check-out Date:</label>
+                    <input type="date" id="filter-check-out" name="filterCheckOut" required>
+                </div>
+                <button type="submit" class="btn">Check Availability</button>
+                <button type="button" id="clear-filter-btn" class="btn-danger" style="display: none;">Clear Filter</button>
+            </form>
+        </section>
+
+        <section id="rooms" class="room-listing">
+            <h2>Our Available Rooms</h2>
+            <div class="room-container" id="room-container">
+                <!-- Room data will be dynamically inserted here by JavaScript -->
+                <div class="room-card">
+                    <img src="room-1.jpg" alt="Deluxe Queen Room">
+                    <h3>Deluxe Queen Room</h3>
+                    <p>A beautiful room with a queen-sized bed and a city view.</p>
+                    <p class="price">₹12,500 / night</p>
+                    <button class="btn" onclick="bookRoom('Deluxe Queen Room')">Book Now</button>
+                </div>
+                <div class="room-card">
+                    <img src="room-2.jpg" alt="Executive Suite">
+                    <h3>Executive Suite</h3>
+                    <p>Spacious suite with a separate living area and premium amenities.</p>
+                    <p class="price">₹20,000 / night</p>
+                    <button class="btn" onclick="bookRoom('Executive Suite')">Book Now</button>
+                </div>
+                <div class="room-card">
+                    <img src="room-3.jpg" alt="Family Room">
+                    <h3>Family Room</h3>
+                    <p>Two double beds, perfect for families or groups.</p>
+                    <p class="price">₹16,000 / night</p>
+                    <button class="btn" onclick="bookRoom('Family Room')">Book Now</button>
+                </div>
+                <div class="room-card">
+                    <img src="room-4.jpg" alt="Honeymoon Suite">
+                    <h3>Honeymoon Suite</h3>
+                    <p>A luxurious suite with a jacuzzi and romantic decor.</p>
+                    <p class="price">₹25,000 / night</p>
+                    <button class="btn" onclick="bookRoom('Honeymoon Suite')">Book Now</button>
+                </div>
+                <div class="room-card">
+                    <img src="room-5.jpg" alt="Standard Single Room">
+                    <h3>Standard Single</h3>
+                    <p>A cozy and affordable room for the solo traveler.</p>
+                    <p class="price">₹8,000 / night</p>
+                    <button class="btn" onclick="bookRoom('Standard Single')">Book Now</button>
+                </div>
+                <div class="room-card">
+                    <img src="room-6.jpg" alt="Presidential Suite">
+                    <h3>Presidential Suite</h3>
+                    <p>The pinnacle of luxury with a private terrace and butler service.</p>
+                    <p class="price">₹75,000 / night</p>
+                    <button class="btn" onclick="bookRoom('Presidential Suite')">Book Now</button>
+                </div>
+                <div class="room-card">
+                    <img src="room-7.jpg" alt="Twin Room">
+                    <h3>Twin Room</h3>
+                    <p>Perfect for friends, featuring two comfortable single beds.</p>
+                    <p class="price">₹10,000 / night</p>
+                    <button class="btn" onclick="bookRoom('Twin Room')">Book Now</button>
+                </div>
+                <div class="room-card">
+                    <img src="room-8.jpg" alt="Accessible Room">
+                    <h3>Accessible Room</h3>
+                    <p>Thoughtfully designed for guests with mobility needs.</p>
+                    <p class="price">₹12,500 / night</p>
+                    <button class="btn" onclick="bookRoom('Accessible Room')">Book Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="amenities" class="amenities-section">
+            <h2>Our World-Class Amenities</h2>
+            <div class="amenities-container">
+                <div class="amenity-item">
+                    <span class="amenity-icon">🌐</span>
+                    <h3>High-Speed Wi-Fi</h3>
+                    <p>Stay connected with complimentary internet access throughout the hotel.</p>
+                </div>
+                <div class="amenity-item">
+                    <span class="amenity-icon">🏊</span>
+                    <h3>Swimming Pool</h3>
+                    <p>Relax and unwind in our stunning infinity pool with a city view.</p>
+                </div>
+                <div class="amenity-item">
+                    <span class="amenity-icon">🏋️</span>
+                    <h3>Fitness Center</h3>
+                    <p>A fully-equipped gym to keep up with your fitness routine.</p>
+                </div>
+                <div class="amenity-item">
+                    <span class="amenity-icon">🍽️</span>
+                    <h3>Gourmet Restaurant</h3>
+                    <p>Experience fine dining with our menu of local and international cuisine.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="location" class="location-section">
+            <h2>Location & Contact</h2>
+            <p><strong>Address:</strong> 123 Luxury Lane, Grand City, 110001</p>
+            <p><strong>Phone:</strong> <a href="tel:+911234567890">+91 12345 67890</a> | <strong>Email:</strong> <a href="mailto:reservations@grandhotel.com">reservations@grandhotel.com</a></p>
+        </section>
+    </main>
+
+    <!-- The Booking Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Book Your Stay</h2>
+            <form id="booking-form">
+                <input type="hidden" id="modal-room-type" name="roomType">
+                <input type="hidden" id="modal-reservation-id" name="reservationId">
+                <div class="form-group">
+                    <label for="guest-name">Full Name:</label>
+                    <input type="text" id="guest-name" name="guestName" required>
+                </div>
+                <div class="form-group">
+                    <label for="check-in-date">Check-in Date:</label>
+                    <input type="date" id="check-in-date" name="checkInDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="check-out-date">Check-out Date:</label>
+                    <input type="date" id="check-out-date" name="checkOutDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="num-guests">Number of Guests:</label>
+                    <input type="number" id="num-guests" name="numGuests" min="1" value="1" required>
+                </div>
+                <button type="submit" class="btn">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Grand Hotel. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
